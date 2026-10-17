@@ -25,3 +25,17 @@
 
 **Problèmes connus**
 - Le certificat HTTPS de `dev:phone` est un certificat de test : Chrome affiche un avertissement à accepter une fois.
+
+## 17/10/2026 — Semaine 1, étape 4 : navigation et écrans vides
+
+**Fait**
+- Barre de navigation en bas (Accueil, Biens, Sauvegarde, Paramètres), boutons ≥ 48 px, icônes SVG intégrées.
+- Petit routeur maison sur les adresses `#/…` (`src/app/routes.ts`, 3 tests) : compatible GitHub Pages et hors connexion ; le bouton « retour » d'Android fonctionne.
+- Écrans vides pour les quatre rubriques ; couleurs contrastées (variables CSS).
+- Étape 3 (test en Wi-Fi via `npm run dev:phone`) : serveur HTTPS vérifié sur le PC, test sur le S10 à faire par le propriétaire.
+
+**Reste (semaine 1)**
+- Dexie, écran Paramètres, PWA (icône), déploiement GitHub Pages.
+
+**Problèmes connus**
+- Aucun.

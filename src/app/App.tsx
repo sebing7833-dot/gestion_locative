@@ -1,11 +1,33 @@
-import { formatDate } from '../domain/format';
+import type { ReactElement } from 'react';
+import { BiensPage } from '../features/biens/BiensPage';
+import { ParametresPage } from '../features/parametres/ParametresPage';
+import { SauvegardePage } from '../features/sauvegarde/SauvegardePage';
+import { AccueilPage } from './AccueilPage';
+import { BarreNavigation } from './BarreNavigation';
+import { ROUTES, type RouteId } from './routes';
+import { useRoute } from './useRoute';
 
-// Écran provisoire : la navigation et les vrais écrans arrivent à l'étape 4.
+const ECRANS: Record<RouteId, () => ReactElement> = {
+  accueil: AccueilPage,
+  biens: BiensPage,
+  sauvegarde: SauvegardePage,
+  parametres: ParametresPage,
+};
+
 export function App() {
+  const route = useRoute();
+  const Ecran = ECRANS[route];
+  const titre = ROUTES.find((r) => r.id === route)?.titre ?? '';
+
   return (
-    <main className="page">
-      <h1>Gestion locative</h1>
-      <p>Aujourd'hui : {formatDate(new Date().toISOString())}</p>
-    </main>
+    <div className="appli">
+      <header className="entete">
+        <h1>{titre}</h1>
+      </header>
+      <main className="contenu">
+        <Ecran />
+      </main>
+      <BarreNavigation active={route} />
+    </div>
   );
 }
