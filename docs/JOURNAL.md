@@ -73,3 +73,18 @@
 
 **Problèmes connus**
 - Écrire à chaque lettre n'est pas vérifié sur le S10 pour la fluidité : à confirmer.
+
+## 17/10/2026 — Semaine 1, étape 7 : appli installable (PWA)
+
+**Fait**
+- Test de l'étape 6 validé sur le S10 : les paramètres survivent à la fermeture forcée de Chrome et au redémarrage du téléphone (27,4 Ko utilisés).
+- Icône : maison épurée avec trou de serrure, version normale et « masquable » (découpe ronde d'Android), dans `public/icones/`.
+- vite-plugin-pwa : manifeste en français, ouverture plein écran, toute l'appli copiée dans le téléphone (17 fichiers), aucune ressource externe.
+- Mises à jour sur demande uniquement (bandeau « Nouvelle version disponible ») ; bandeau « L'appli fonctionne maintenant hors connexion » à la première installation.
+- Build de production prévu pour le sous-dossier GitHub Pages `/gestion_locative/`.
+
+**Reste (semaine 1)**
+- Déploiement GitHub Pages, installation sur le S10, test en mode avion.
+
+**Problèmes connus**
+- Le service worker n'est pas actif avec `npm run dev:phone` (choix de Vite) : le mode avion se teste sur la version en ligne.

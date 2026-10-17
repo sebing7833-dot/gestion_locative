@@ -224,3 +224,42 @@ body {
   color: var(--alerte);
   background: var(--alerte-fond);
 }
+
+/* --- Bandeau d'information, posé juste au-dessus de la barre de navigation --- */
+.bandeau {
+  position: fixed;
+  left: 8px;
+  right: 8px;
+  bottom: calc(var(--hauteur-barre) + 8px + env(safe-area-inset-bottom));
+  z-index: 2;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 12px;
+  color: var(--accent-texte);
+  background: var(--texte);
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgb(0 0 0 / 0.25);
+}
+
+.bandeau span {
+  flex: 1 1 100%;
+}
+
+.bandeau__bouton {
+  min-height: var(--cible-min);
+  padding: 0 16px;
+  font: inherit;
+  font-weight: 700;
+  color: var(--texte);
+  background: var(--accent-texte);
+  border: none;
+  border-radius: 8px;
+}
+
+.bandeau__bouton--discret {
+  color: var(--accent-texte);
+  background: transparent;
+  border: 2px solid var(--accent-texte);
+}

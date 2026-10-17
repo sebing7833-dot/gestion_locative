@@ -4,6 +4,7 @@ import { ParametresPage } from '../features/parametres/ParametresPage';
 import { SauvegardePage } from '../features/sauvegarde/SauvegardePage';
 import { AccueilPage } from './AccueilPage';
 import { BarreNavigation } from './BarreNavigation';
+import { MiseAJour } from './MiseAJour';
 import { ROUTES, type RouteId } from './routes';
 import { useRoute } from './useRoute';
 
@@ -27,6 +28,7 @@ export function App() {
       <main className="contenu">
         <Ecran />
       </main>
+      <MiseAJour />
       <BarreNavigation active={route} />
     </div>
   );

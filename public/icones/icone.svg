@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+  <!-- Icône de l'appli : maison épurée avec un trou de serrure (la location). -->
+  <rect width="512" height="512" rx="112" fill="#0b4f9c"/>
+  <g fill="none" stroke="#ffffff" stroke-width="28" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M132 250 256 146 380 250"/>
+    <path d="M170 226V372H342V226"/>
+  </g>
+  <g fill="#ffffff">
+    <circle cx="256" cy="282" r="24"/>
+    <path d="M245 296 238 336H274L267 296Z"/>
+  </g>
+</svg>
