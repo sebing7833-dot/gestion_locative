@@ -11,7 +11,7 @@
 - Squelette Vite + React + TypeScript, navigation, Dexie, paramètres, PWA, déploiement.
 
 **Problèmes connus**
-- Dépôt GitHub privé : GitHub Pages n'est pas gratuit sur un dépôt privé (voir étape 8).
+- ~~Dépôt GitHub privé~~ : réglé le 17/10/2026, dépôt passé en public (GitHub Pages gratuit). E-mail des commits : adresse anonyme GitHub.
 
 ## 17/10/2026 — Semaine 1, étape 2 : squelette du projet
 
