@@ -39,3 +39,23 @@
 
 **Problèmes connus**
 - Aucun.
+
+## 17/10/2026 — Semaine 1, étapes 3 et 5 : test en Wi-Fi, base de données locale
+
+**Fait**
+- Étape 3 validée sur le S10 : navigation, bouton « retour », barre du bas visible.
+  - Le serveur doit être lancé depuis le dossier du projet : `cd ~/Documents/code/gestion_locative` puis `npm run dev:phone`.
+  - Pare-feu du PC : port 5173 ouvert au réseau local (`sudo ufw allow from 192.168.1.0/24 to any port 5173 proto tcp`).
+  - Le téléphone n'atteignait pas le PC au début (réglage du téléphone, corrigé par le propriétaire).
+- Port 5173 fixé dans `vite.config.ts` : erreur claire si le serveur est déjà lancé.
+- Base IndexedDB (Dexie), schéma version 1 : tables `bailleurs` et `parametres` (`src/db/`).
+  - Règle de migration écrite en tête de `src/db/base.ts` ; `SCHEMA_VERSION` servira aux sauvegardes zip.
+  - Chaque modification est enregistrée immédiatement (`modifierBailleur`, `modifierParametre`).
+- Demande de stockage persistant à l'ouverture de l'appli ; lecture de l'espace utilisé.
+- 5 tests de la base (avec fake-indexeddb), 13 tests au total.
+
+**Reste (semaine 1)**
+- Écran Paramètres, PWA (icône), déploiement GitHub Pages.
+
+**Problèmes connus**
+- Chrome n'accorde souvent le stockage persistant qu'une fois l'appli installée : à vérifier à l'étape 7.
