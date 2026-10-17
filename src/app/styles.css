@@ -1,0 +1,17 @@
+/* Polices du système uniquement : rien n'est téléchargé (hors connexion). */
+:root {
+  --fond: #ffffff;
+  --texte: #1a1a1a;
+  font-family: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+  font-size: 18px;
+  color: var(--texte);
+  background: var(--fond);
+}
+
+body {
+  margin: 0;
+}
+
+.page {
+  padding: 16px;
+}

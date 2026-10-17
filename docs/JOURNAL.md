@@ -12,3 +12,16 @@
 
 **Problèmes connus**
 - Dépôt GitHub privé : GitHub Pages n'est pas gratuit sur un dépôt privé (voir étape 8).
+
+## 17/10/2026 — Semaine 1, étape 2 : squelette du projet
+
+**Fait**
+- Projet Vite + React + TypeScript (mode strict), ESLint, Vitest.
+- Commandes : `dev`, `dev:phone` (HTTPS de test pour le S10 en Wi-Fi), `build`, `preview`, `test`, `lint`.
+- `src/domain/format.ts` : dates en JJ/MM/AAAA, montants en centimes affichés « 1 234,56 € » (5 tests).
+
+**Reste (semaine 1)**
+- Navigation, Dexie, paramètres, PWA, déploiement.
+
+**Problèmes connus**
+- Le certificat HTTPS de `dev:phone` est un certificat de test : Chrome affiche un avertissement à accepter une fois.
