@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest';
-import { formatDate, formatDateHeure, formatMontant } from './format';
+import { formatDate, formatDateHeure, formatMontant, formatOctets } from './format';
 
 // Intl insère des espaces insécables ; on les remplace pour comparer simplement.
 const espacesNormales = (s: string) => s.replace(/[\u00a0\u202f]/g, ' ');
@@ -31,5 +31,15 @@ describe('formatMontant', () => {
 
   it('refuse un montant qui n’est pas en centimes entiers', () => {
     expect(() => formatMontant(12.5)).toThrow();
+  });
+});
+
+describe('formatOctets', () => {
+  it('choisit l’unité adaptée', () => {
+    expect(espacesNormales(formatOctets(0))).toBe('0 octets');
+    expect(espacesNormales(formatOctets(512))).toBe('512 octets');
+    expect(espacesNormales(formatOctets(1536))).toBe('1,5 Ko');
+    expect(espacesNormales(formatOctets(12.3 * 1024 * 1024))).toBe('12,3 Mo');
+    expect(espacesNormales(formatOctets(5 * 1024 ** 3))).toBe('5 Go');
   });
 });

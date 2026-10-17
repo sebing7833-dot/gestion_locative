@@ -59,3 +59,17 @@
 
 **Problèmes connus**
 - Chrome n'accorde souvent le stockage persistant qu'une fois l'appli installée : à vérifier à l'étape 7.
+
+## 17/10/2026 — Semaine 1, étape 6 : écran Paramètres
+
+**Fait**
+- Identité du bailleur enregistrée à chaque lettre tapée, avec « ✓ Enregistré automatiquement » ou une alerte en cas d'échec.
+- Qualité des photos : trois boutons (Économe 0,7 / Normale 0,8 / Haute 0,9).
+- Stockage : espace utilisé et disponible, état de la protection contre l'effacement, avec explication.
+- `formatOctets` (« 12,3 Mo ») et composant réutilisable `ChampTexte` ; 14 tests au total.
+
+**Reste (semaine 1)**
+- PWA (icône, mode avion), déploiement GitHub Pages.
+
+**Problèmes connus**
+- Écrire à chaque lettre n'est pas vérifié sur le S10 pour la fluidité : à confirmer.

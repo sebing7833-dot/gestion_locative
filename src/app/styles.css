@@ -94,3 +94,133 @@ body {
   width: 26px;
   height: 26px;
 }
+
+/* --- Sections et formulaires --- */
+:root {
+  --ok: #1b6e2f;
+  --ok-fond: #e6f4ea;
+  --alerte: #8a4b00;
+  --alerte-fond: #fff3e0;
+  --erreur: #b3261e;
+}
+
+.section + .section {
+  margin-top: 28px;
+}
+
+.section h2 {
+  margin: 0 0 12px;
+  font-size: 1.1rem;
+}
+
+.champ {
+  margin-bottom: 14px;
+}
+
+.champ label {
+  display: block;
+  margin-bottom: 4px;
+  font-weight: 600;
+}
+
+/* 18px minimum : en dessous, Chrome Android zoome sur le champ à la saisie. */
+.champ input,
+.champ textarea {
+  width: 100%;
+  min-height: var(--cible-min);
+  padding: 10px 12px;
+  font: inherit;
+  color: var(--texte);
+  background: var(--fond);
+  border: 2px solid var(--bordure);
+  border-radius: 8px;
+}
+
+.champ input:focus,
+.champ textarea:focus {
+  outline: none;
+  border-color: var(--accent);
+}
+
+.etat-enregistrement {
+  margin: 0;
+  color: var(--ok);
+  font-size: 0.9rem;
+}
+
+.etat-enregistrement--erreur {
+  color: var(--erreur);
+  font-weight: 700;
+}
+
+.choix-groupe {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+}
+
+.choix {
+  min-height: 64px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2px;
+  padding: 8px 4px;
+  font: inherit;
+  color: var(--texte);
+  background: var(--fond);
+  border: 2px solid var(--bordure);
+  border-radius: 8px;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.choix small {
+  color: var(--texte-doux);
+  font-size: 0.7rem;
+  text-align: center;
+}
+
+.choix[aria-pressed='true'] {
+  color: var(--accent-texte);
+  background: var(--accent);
+  border-color: var(--accent);
+}
+
+.choix[aria-pressed='true'] small {
+  color: var(--accent-texte);
+}
+
+.infos {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 6px 16px;
+  margin: 0 0 12px;
+}
+
+.infos dt {
+  color: var(--texte-doux);
+}
+
+.infos dd {
+  margin: 0;
+  font-weight: 600;
+  text-align: right;
+}
+
+.message {
+  margin: 0;
+  padding: 10px 12px;
+  border-radius: 8px;
+  font-size: 0.9rem;
+}
+
+.message--ok {
+  color: var(--ok);
+  background: var(--ok-fond);
+}
+
+.message--alerte {
+  color: var(--alerte);
+  background: var(--alerte-fond);
+}

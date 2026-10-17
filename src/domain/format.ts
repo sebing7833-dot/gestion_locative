@@ -33,6 +33,21 @@ export function formatMontant(centimes: number): string {
   return formatMontantFr.format(centimes / 100);
 }
 
+const UNITES_OCTETS = ['octets', 'Ko', 'Mo', 'Go', 'To'];
+
+const formatDecimalFr = new Intl.NumberFormat('fr-FR', { maximumFractionDigits: 1 });
+
+/** Taille en octets → « 12,3 Mo » (1 Ko = 1024 octets). */
+export function formatOctets(octets: number): string {
+  let valeur = octets;
+  let unite = 0;
+  while (valeur >= 1024 && unite < UNITES_OCTETS.length - 1) {
+    valeur /= 1024;
+    unite++;
+  }
+  return `${formatDecimalFr.format(valeur)} ${UNITES_OCTETS[unite]}`;
+}
+
 function lireDate(iso: string): Date {
   const d = new Date(iso);
   if (Number.isNaN(d.getTime())) {
