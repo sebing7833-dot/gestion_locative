@@ -1,0 +1,15 @@
+# Dépendances et builds
+node_modules/
+dist/
+dev-dist/
+coverage/
+
+# Éditeurs et système
+.vscode/
+.idea/
+*.log
+.DS_Store
+
+# Sauvegardes de l'appli : contiennent des données personnelles, jamais dans Git
+*.zip
+sauvegardes/
